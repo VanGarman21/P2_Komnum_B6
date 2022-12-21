@@ -97,8 +97,11 @@ Berikut merupakan hasil penyelesaian yang ditampilkan oleh program.
 
 Jadi, dari soal tersebut, hasil integrasi Romberg yang didapatkan adalah 0.13353139262452263
 
-Kesimpulannya:
-Ditunjukkan pada program tersebut bahwa metode Integrasi Romberg menggunakan jumlah interval yang lebih kecil dibandingkan jumlah interval metode Trapezoidal yang lebih besar. Sehingga, terbukti bahwa metode Integrasi Romberg dapat mengatasi kelemahan dari metode Trapezoidal yang harus menggunakan jumlah interval yang besar untuk memperoleh akurasi yang diharapkan.
+# Kesimpulannya:
+Metode Romberg adalah salah satu metode yang dapat digunakan untuk menghitung integrasi numerik dengan lebih akurat. Metode ini menggunakan teknik extrapolasi terpolarisasi yang memperbaiki hasil integrasi dengan memanfaatkan hasil integrasi yang telah diperoleh sebelumnya. Metode Romberg dapat mengatasi kelemahan metode
+trapesium dengan cara meningkatkan akurasi hasil integrasi dengan melakukan iterasi lebih banyak.
+
+Dalam program di atas, fungsi Romberg memiliki empat parameter yaitu fungsi yang akan diintegrasikan (f), batas bawah integrasi (a), batas atas integrasi (b), dan jumlah iterasi (n). Fungsi Romberg pertama-tama akan menghitung hasil integrasi dengan menggunakan rumus integrasi trapesium yaitu dengan mengalikan jumlah panjang interval dengan jumlah nilai f(a) dan f(b) dibagi 2. Kemudian, fungsi Romberg akan melakukan iterasi sebanyak n kali untuk menghitung hasil integrasi dengan metode Romberg. Setiap iterasi akan menghitung nilai h yaitu panjang interval dibagi 2 pangkat i. Kemudian, fungsi Romberg akan menghitung nilai sum dengan menambahkan nilai f(x) pada setiap x yang telah ditentukan. Nilai r[i][0] akan dihitung dengan menggunakan rumus Romberg yaitu dengan mengalikan r[i-1][0] dibagi 2 ditambah h kali nilai sum. Setelah itu, nilai r[i][j] akan dihitung dengan menggunakan rumus Romberg yaitu dengan mengalikan 4 pangkat j kali r[i][j-1] dikurang r[i-1][j-1] dibagi 4 pangkat j dikurang 1. Setelah selesai melakukan iterasi, fungsi Romberg akan mencetak tabel hasil iterasi Romberg dan mengembalikan hasil integrasi yaitu nilai r[n][n].
 
 
 
